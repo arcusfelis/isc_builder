@@ -16,6 +16,7 @@ COMMENT="Push $(VERSION) at $(date -u)."
 $INC_DIR/download.sh "${VERSION}" "${ZIP}"
 $INC_DIR/build.sh "${DIR}" "${ZIP}"
 
+git add -a .
 git add -u 
 git commit -m "$COMMENT"
 git push
