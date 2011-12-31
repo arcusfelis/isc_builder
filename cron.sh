@@ -11,11 +11,13 @@ INC_DIR="$(pwd)"
 
 cd "$DIR"
 
-rm -rf ./*
 
 ZIP="$(mktemp)"
 COMMENT="Push ${VERSION} at $(date -u)."
 $INC_DIR/download.sh "${VERSION}" "${ZIP}"
+
+rm -rf ./*
+
 $INC_DIR/build.sh "${DIR}" "${ZIP}"
 
 git add .
