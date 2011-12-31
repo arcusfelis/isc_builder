@@ -9,7 +9,6 @@ TMP_DIR="$(mktemp -d)"
 unzip "$ZIP" -d "$TMP_DIR"
 
 TMP_ISO="${TMP_DIR}/*/smartclientRuntime/isomorphic"
-mv ${TMP_ISO}/../license.html "${DEST_DIR}/"
 
 SKINS_DIR="${DEST_DIR}/skins"
 mkdir -p "${SKINS_DIR}"
@@ -20,5 +19,6 @@ SYSTEM_DIR="${DEST_DIR}/system"
 mkdir -p "${SYSTEM_DIR}"
 mv ${TMP_ISO}/system/{modules,license.html} "${SYSTEM_DIR}/"
 
+mv ${TMP_ISO}/../license.html "${DEST_DIR}/"
 
 rm -rf "$TMP_DIR"
