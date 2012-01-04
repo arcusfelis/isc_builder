@@ -1,6 +1,7 @@
 #!/bin/sh
 
 VERSION="8.2p"
+PREFIX="_v82p_LGPL"
 DIR="/home/builder/isomorphic"
 
 set -e 
@@ -14,7 +15,7 @@ cd "$DIR"
 
 ZIP="$(mktemp)"
 COMMENT="Push ${VERSION} at $(date -u)."
-$INC_DIR/download.sh "${VERSION}" "${ZIP}"
+$INC_DIR/download.sh "${VERSION}" "${PREFIX}" "${ZIP}"
 
 rm -rf ./*
 
